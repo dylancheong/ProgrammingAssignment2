@@ -1,7 +1,7 @@
 ## Check whether the matrix has been cache. If not cache it, otherwise retrieve previous 
 ## calculation.
 
-## create a cache for the the new inverse matrix
+## create a cache for the the new matrix. It will return the previous saved calculation.
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -18,7 +18,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This is to check whether the matrix has been inversed before. 
+## This is to check whether the matrix calculation has been cached. Data that has not been cached before will proceed
+## with the calculation and finally cache using the MakeCache function for next retrieval. If the calculation
+## has been cached before then it will simply get the cached value.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
